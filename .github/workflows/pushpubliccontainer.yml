@@ -5,5 +5,5 @@ jobs:
   runs-on: ubuntu-latest
   steps: 
   - run: brew install skopeo
-  - run: skopeo login -u '${{ github.actor }}' -p '${{ secrets.GITHUB_TOKEN }}' ghcr.io
-  - run: skopeo copy --override-os linux docker://docker.io/library/alpine:latest docker://ghcr.io/orgdwivedine/alpine:latest
+  - run: sudo skopeo login -u '${{ github.actor }}' -p '${{ secrets.GITHUB_TOKEN }}' ghcr.io
+  - run: sudo skopeo copy --override-os linux docker://docker.io/library/alpine:latest docker://ghcr.io/orgdwivedine/alpine:latest
